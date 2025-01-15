@@ -15,7 +15,7 @@ namespace conf
 
     // Disks configuration
     const float scale = 0.2f;
-    const int max_frequencies = 2500;
+    const int max_frequencies = 2000;
 
     // Brush configuration
     const sf::Color brush_color{205, 83, 4};

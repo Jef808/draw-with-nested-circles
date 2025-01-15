@@ -69,7 +69,6 @@ int main()
                           });
                 auto size = std::min(conf::max_frequencies, static_cast<int>(dft.coefficients.size()));
                 dft.coefficients.resize(size);
-                // auto size = dft.coefficients.size();
 
                 std::transform(dft.coefficients.begin(), dft.coefficients.end(), std::back_inserter(circles),
                                [](const auto& coef) {
@@ -94,7 +93,7 @@ int main()
             {
                 sf::CircleShape& circle = circles[i];
                 float radius = circle.getRadius();
-                float angle = std::arg(dft.coefficients[i].c) + time * dft.coefficients[i].k / total_time * 2.0f * M_PIf;
+                float angle = std::arg(dft.coefficients[i].c) + 4.0f * time * dft.coefficients[i].k / total_time * 2.0f * M_PIf / 5.0;
 
                 circle.setPosition(pos);
                 lines[i] = sf::Vertex{pos, i < 2 ? sf::Color::Transparent : sf::Color::White};
